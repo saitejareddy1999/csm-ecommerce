@@ -1,0 +1,16 @@
+<div class="pagination-box p-box-2 text-center">
+    <nav aria-label="Page navigation example">
+      {%if page.has_other_pages%}
+         <div class="paginator"><br><br><br><br><br><br><br><br>
+  {%if page.has_previous%}
+    <a href="?page={{page.previous_page_number}}">Previous</a>
+  {%endif%}&nbsp&nbsp
+
+  <span class="paginator" >Page {{page.number}} of {{page.paginator.num_pages}}</span>&nbsp&nbsp
+  {%if page.has_next%}
+    <a href="?page={{page.next_page_number}}">Next</a>
+  {%endif%}
+   </div>
+{%endif%}
+ </nav>
+</div>
