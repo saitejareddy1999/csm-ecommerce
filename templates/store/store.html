@@ -115,24 +115,30 @@
 				</div>
 		</header><!-- sect-heading -->
 			<div class="row">
-			  {%for product in products%}
-				<div class="col-md-4">
-					<figure class="card card-product-grid">
-						<div class="img-wrap">
-							<a href="{{product.get_absolute_url}}"><img src="{{product.images.url}}"></a>
-						</div> <!-- img-wrap.// -->
-						<figcaption class="info-wrap">
-							<div class="fix-height">
-								<a href="{{product.get_absolute_url}}" class="title">{{product.product_name}}</a>
-								<div class="price-wrap mt-2">
-									<span class="price">{{product.price}}</span>
-								</div> <!-- price-wrap.// -->
-							</div>
-							<a href="#" class="btn btn-block btn-primary">Add to cart </a>
-						</figcaption>
-					</figure>
-			 	</div> <!-- col.// -->
-			 {%endfor%}
+				{%if products%}
+					  {%for product in products%}
+						<div class="col-md-4">
+							<figure class="card card-product-grid">
+								<div class="img-wrap">
+									<a href="{{product.get_absolute_url}}"><img src="{{product.images.url}}"></a>
+								</div> <!-- img-wrap.// -->
+								<figcaption class="info-wrap">
+									<div class="fix-height">
+										<a href="{{product.get_absolute_url}}" class="title">{{product.product_name}}</a>
+										<div class="price-wrap mt-2">
+											<span class="price">{{product.price}}</span>
+										</div> <!-- price-wrap.// -->
+									</div>
+									<a href="{{product.get_absolute_url}}" class="btn btn-block btn-outline-primary">View Details<i class="fas fa-eye"></i> </a>
+								</figcaption>
+							</figure>
+					 	</div> <!-- col.// -->
+					 {%endfor%}
+				{%else%}
+						<div >
+							<h2 >No result found!!!</h2>
+						</div>
+				{%endif%}
 			</div> <!-- row end.// -->
 			{%include 'pages/paginator.html' with page=products%}
 	</main> <!-- col.// -->

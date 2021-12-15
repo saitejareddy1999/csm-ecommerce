@@ -34,9 +34,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item nav-left">
-          <a class="nav-link" aria-current="page" href="#">Home</a><span class="dark-transp"></span>
-        </li>
+
         <div class="col-lg col-sm col-md col-6 flex-grow-0">
           <div class="category-wrap dropdown d-inline-block float-right">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -51,9 +49,9 @@
         </div> <!-- col.// -->
         <a class="nav-link" aria-current="page" href="{%url 'store'%}">Store</a>
         <div class="col-lg  col-md-6 col-sm-12 col">
-          <form action="#" class="search">
+          <form action="{%url 'search' %}" class="search">
             <div class="input-group w-100">
-                <input type="text" class="form-control" style="width:60%;" placeholder="Search">
+                <input type="text" class="form-control" style="width:60%;" placeholder="Search" name='q'>
                 <div class="input-group-append">
                   <button class="btn btn-primary" type="submit">
                     <i class="fa fa-search"></i>
@@ -71,9 +69,9 @@
                     <a href="./register.html"> Register</a>
                   </div>
                 </div>
-                <a href="./cart.html" class="widget-header pl-3 ml-3">
+                <a href="{%url 'cart'%}" class="widget-header pl-3 ml-3">
                   <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
-                  <span class="badge badge-pill badge-danger notify">0</span>
+                  <span class="badge badge-pill badge-danger notify">{{cart_count}}</span>
                 </a>
               </div> <!-- widgets-wrap.// -->
             </div> <!-- col.// -->
