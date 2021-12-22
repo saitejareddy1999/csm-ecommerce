@@ -10,8 +10,21 @@
 				<span  class="px-2">+879-332-9375</span>
 				<span  class="px-2">Street name 123, Avanue abc</span>
 			</div>
-			
+
 		</section>
 	</div><!-- //container -->
 </footer>
 <!-- ========================= FOOTER END // ========================= -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.thumb a').click(function(e){
+			e.preventDefault();
+			$('.mainImage img').attr('src',${this}.attr("href"));
+		})
+	})
+</script>
+
+
+</body>
+</html>

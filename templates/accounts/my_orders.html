@@ -16,29 +16,35 @@
 	<main class="col-md-9">
 		<article class="card">
 		<header class="card-header">
-			<strong class="d-inline-block mr-3">Logged in as:</strong>
-			<span>{{user.full_name}}</span>
+			<strong class="d-inline-block mr-3">Your order history:</strong>
+
 		</header>
 		<div class="card-body">
 			<div class="row">
+				<div class="col-md-12">
+					<table class="table table-hover">
+					  <thead>
+					    <tr>
+					      <th scope="col">Order ID</th>
+					      <th scope="col">Billing Name</th>
+					      <th scope="col">Phone</th>
+					      <th scope="col">Order_total</th>
+								<th scope="col">Date</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+								{%for order in orders%}
+					      <th scope="row"><a href="{%url 'order_detail' order.order_number%}">{{order.order_number}}</a></th>
+					      <td>{{order.full_name}}</td>
+					      <td>{{order.phone}}</td>
+					      <td>{{order.order_total}}</td>
+								<td>{{order.created_at}}</td>
+								{%endfor%}
+					    </tr>
 
-				<div class="col-md-6">
-					<div class="card">
-						<div class="card-body" style="text-align:center;">
-							<h5>Total orders</h5>
-							<h4>{{orders_count}}</h4>
-							<a href="{%url 'my_orders'%}">View orders</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="card" style="text-align:center;">
-						<div class="card-body">
-							<img src="{{userprofile.profile_picture.url}}" alt="user profile picture" width="50" height="50" style="border-radius:50%;" >
-							<p class="mb-0">{{user.email}}</p>
-							<p>{{user.phone_number}}</p>
-						</div>
-					</div>
+					  </tbody>
+				</table>
 				</div>
 			</div> <!-- row.// -->
 		</div> <!-- card-body .// -->
