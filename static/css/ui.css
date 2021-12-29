@@ -155,6 +155,7 @@ a:hover {
   transform: scaleX(1);
 }
 
+
 /* ============== spacing ============== */
 .padding-y {
   padding-top: 40px;
@@ -449,11 +450,14 @@ p:last-child {
 .widget-header a {
   color: #343a40;
 }
+.list-inline a {
+  color: #343a40;
+}
 .widget-header a:hover {
   color: #3167eb;
 }
-.widget-header i {
-  color: #969696;
+.widget-header a {
+  color: #343a40;
 }
 .widget-header form {
   min-width: 280px;
@@ -466,9 +470,7 @@ p:last-child {
   top: -3px;
   right: -10px;
 }
-.widget-header:hover i {
-  color: #3167eb;
-}
+
 
 /* desktop only */
 /* desktop only .end */

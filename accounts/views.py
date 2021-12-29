@@ -297,7 +297,7 @@ def edit_profile(request):
     if request.method == 'POST':
         print('entered if')
         user_form=UserForm(request.POST,instance=request.user)
-        profile_form=UserProfileForm(request.post,request.FILES,instance=userprofile)
+        profile_form=UserProfileForm(request.POST,request.FILES,instance=userprofile)
         print(user_form,profile_form)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()

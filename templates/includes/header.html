@@ -2,27 +2,13 @@
   <div id="topheader">
     <div class="container">
       <div class="col-lg-8 col-md-8 col-sm-7">
-          <div class="list-inline">
-              <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i>+91-08647228964</a>&nbsp&nbsp
-              <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>csmnrt@gmail.com</a>&nbsp&nbsp
-              <a href="tel:info@themevessel.com"><i class="fa fa-clock-o"></i>Mon - Sun: 8:00am - 6:00pm</a>
+          <div class="list-inline ">
+              <a href="tel:+91-08647228964"><i class="fa fa-phone"></i>+91-08647228964</a>&nbsp&nbsp
+              <a href="tel:csmnrt@gmail.com"><i class="fa fa-envelope"></i>csmnrt@gmail.com</a>&nbsp&nbsp
+              <a href="#"><i class="fa fa-clock-o"></i>Mon - Sun: 8:00am - 6:00pm</a>
           </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-5">
-          <ul class="top-social-media pull-right">
-            {%if user.is_authenticated%}
-            <a href="#" class="sign-in"><i class="fa fa-sign-in"></i>Dashboard</a>&nbsp&nbsp
-            <a href="javascript:{document.getElementById('logout').submit()}" class="sign-out"><i class="fa fa-sign-out"></i> Logout</a>
-                  <form action="#" id="logout" method="POST">
-                    {% csrf_token %}
-                    <input type="hidden">
-                  </form>
-            {%else%}
-                  <a href="#" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>&nbsp&nbsp
-                  <a href="#"class="sign-up"><i class="fa fa-user"></i> Register</a>
-            {%endif%}
-          </ul>
-      </div>
+
     </div>
   </div>
 </header>
@@ -41,6 +27,7 @@
               <i class="fa fa-bars"></i> All category
             </button>
             <div class="dropdown-menu">
+              <li><a href="{%url 'store'%}">All products </a></li>
               {%for category in links%}
               <a class="dropdown-item" href="{{category.get_absolute_url}}">{{category.category_name}}</a>
               {%endfor%}

@@ -117,7 +117,7 @@ def place_order(request,total=0,quantity=0,):
             order = Order.objects.get(user=current_user,is_ordered=False,order_number=order_number)#is_ordered will get True if we get order the product
             context={
             'order':order,
-            'cart_item':cart_item,
+            'cart_items':cart_items,
             'total':total,
             'tax':tax,
             'grand_total':grand_total

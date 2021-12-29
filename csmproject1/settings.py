@@ -131,7 +131,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
 STATIC_DIR,
 ]
-#mediafiles configuratiN
+#mediafiles configuratioN
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 from django.contrib.messages import constants as messages
